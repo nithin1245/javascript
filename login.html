@@ -2,33 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+    <style></style>
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("registerform");
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const username = document.getElementById("username").value;
+                const email = document.getElementById("email").value;
+                const number = document.getElementById("number").value;
+
+                console.log("Username:", username);
+                console.log("Email:", email);
+                console.log("Mobile Number:", number);
+                console.log("Form submitted!");
+                console.log(
+                    "Username:",
+                    username,
+                    "Email:",
+                    email,
+                    "Mobile Number:",
+                    number
+                );
+                alert("Form submitted successfully!");
+                form.reset();
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <form>
-        <h1>Registration Form</h1>
-        <label>username</label>
-        <br>
-        <input type="text" placeholder="enter username">
-        <br>
+    <h1>Registration Form</h1>
+    <form id="registerform">
+        <label>Username</label>
+        <br />
+        <input type="text" name="username" placeholder="Enter your username" id="username" />
+        <br /><br>
         <label>Email</label>
-        <br>
-        <input type="email" placeholder="enter useremail">
-        <br>
-        <label>Mobilenumber</label>
-        <br>
-        <input type="mobilenumber" placeholder="enter mobilenumber">
-        <br>
-        <button>Submit</button>
-
-
-
-
+        <br />
+        <input type="email" name="email" placeholder="Enter your email" id="email" />
+        <br /><br>
+        <label>Mobile Number</label>
+        <br />
+        <input type="number" name="number" placeholder="Enter your mobile number" id="number" />
+        <br /><br>
+        <input type="submit" value="submit" />
     </form>
-
 </body>
 
 </html>
